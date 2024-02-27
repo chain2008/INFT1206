@@ -10,6 +10,12 @@ img {
   display: block;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .logo {
   font-size: 200%;
   padding: 50px 20px;
@@ -26,23 +32,29 @@ img {
 
 nav {
   background-color: #000;
-  padding: .5em;
   position: sticky;
   top: 0;  
 }
 
 nav ul {
-  margin: 0;
+  margin: 0px 20px 0px 20px;
   padding: 0;
   list-style: none;
   display: flex;
   justify-content: space-between;
+  padding-inline-start: 0px;
+}
+
+nav li{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
 }
 
 nav a {
+  padding: .5em;
   color: #fff;
   text-decoration: none;
-  padding: .5em 1em;
 }
 
 ul.photos {
@@ -63,4 +75,10 @@ ul.photos li {
   width: 200px;
   float: left;
   margin-right: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  nav ul {
+    margin: 0px 0px 0px 0px;
+  }
 }
