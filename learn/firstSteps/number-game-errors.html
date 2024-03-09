@@ -46,7 +46,7 @@
 
   const guesses = document.querySelector('.guesses');
   const lastResult = document.querySelector('.lastResult');
-  const lowOrHi = document.querySelector('lowOrHi');
+  const lowOrHi = document.querySelector('.lowOrHi');
   const guessSubmit = document.querySelector('.guessSubmit');
   const guessField = document.querySelector('.guessField');
 
@@ -60,7 +60,7 @@
       guesses.textContent = 'Previous guesses: ';
     }
     guesses.textContent += userGuess + ' ';
-
+    let letVar = 2;
     if(userGuess === randomNumber) {
       lastResult.textContent = 'Congratulations! You got it right!';
       lastResult.style.backgroundColor = 'green';
@@ -70,6 +70,7 @@
       lastResult.textContent = '!!!GAME OVER!!!';
       setGameOver();
     } else {
+      let letVar = 1;
       lastResult.textContent = 'Wrong!';
       lastResult.style.backgroundColor = 'red';
       if(userGuess < randomNumber) {
@@ -78,6 +79,7 @@
         lowOrHi.textContent = 'Last guess was too high!';
       }
     }
+    letVar++;
 
     guessCount++;
     guessField.value = '';
@@ -91,8 +93,7 @@
 	  resetButton = document.createElement('button');
 	  resetButton.textContent = 'Start new game';
 	  document.body.appendChild(resetButton);
-	  //resetButton.addEventListener('click', resetGame);
-    resetButton.addeventListener('click', resetGame);
+	  resetButton.addEventListener('click', resetGame);
   }
 
   function resetGame() {
