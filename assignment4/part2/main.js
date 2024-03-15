@@ -19,6 +19,7 @@ const images = [
 for (const image of images) {
     const newItem = document.createElement('li');
     const newImage = document.createElement('img');
+    newImage.setAttribute('tabIndex', `0`);
     newImage.setAttribute('src', `images/${image.file}`);
     newImage.setAttribute('alt', `images/${image.alt}`);
     newItem.appendChild(newImage);
@@ -27,6 +28,12 @@ for (const image of images) {
         displayedImage.src = e.target.src;
         displayedImage.alt =e.target.alt;
     });
+    newImage.onkeydown = e => {
+      if(e.key === 'Enter' || e.key === ' '){
+        displayedImage.src = e.target.src;
+        displayedImage.alt =e.target.alt;
+      }
+  };    
 }
 
 /* Wiring up the Darken/Lighten button */
