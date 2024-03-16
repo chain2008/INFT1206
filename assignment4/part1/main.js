@@ -23,7 +23,7 @@ function result() {
     weight = `${Math.round(300 / 14)} Stone`;
     temperature = `${Math.round((94 - 32) * 5 / 9)} centigrade`;
   }
-
+  window.eval("console.log('eval....');");
   story.textContent = getStory(role, place, action, temperature, client, weight);
   story.style.visibility = 'visible';
 }
