@@ -20,6 +20,7 @@ function createPerson(name, birthday) {
         },
         introduceSelf: function () {
             console.log(`Hi! I'm ${this.name} ${(new Date()).getFullYear() - this._birthday.getFullYear()}`);
+            //console.log(`Hi! I'm ${this.name}`);
         }
     };
 }
@@ -27,10 +28,10 @@ function createPerson(name, birthday) {
 let smith = createPerson('smith', '2000/01/01');
 console.log(`${smith.name} is ${smith.age()} years old`);
 smith.name = 'David';
-console.log(`${smith.name} is ${smith.age()} years old`);
-console.log(smith.introduceSelf());
+//console.log(`${smith.name} is ${smith.age()} years old`);
+smith.introduceSelf();
 
 smith._birthday = new Date('2022/01/01');
 console.log(`${smith.name} is ${smith.age()} years old`);
-console.log(smith.introduceSelf());
+smith.introduceSelf();
 
