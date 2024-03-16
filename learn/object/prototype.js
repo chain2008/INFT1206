@@ -1,6 +1,4 @@
 const Person = {
-    //name: ["Bob", "Smith"],
-    //birthday: new Date(),
     age: function(){ //cannot be arrow function
         //let birthday = new Date(_birthday);
         return (new Date()).getFullYear() - this.birthday.getFullYear();
@@ -14,11 +12,13 @@ const Person = {
 };
 
 function Student(name, birthday) {
-    this.name = ["Bob", "Smith"];
+    this.name = name;
     this.birthday = new Date(birthday);
 };
 //we only prototype to reuse function
 Object.assign(Student.prototype , Person);
 
-let smith = new Student('smith', '2000/01/01');
+let smith = new Student(['Bob','Smith'], '2000/01/01');
 console.log(`${smith.name} is ${smith.age()} years old`);
+let david = new Student(['Max','David'], '2004/01/01');
+console.log(`${david.name} is ${david.age()} years old`);
