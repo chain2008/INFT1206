@@ -11,15 +11,15 @@ const person = {
 };
 
 function createPerson(name, birthday) {
-    let _birthday = Date.parse(birthday);
+    let _birthday = new Date(birthday);
     return {
         name,
         age: () => {
             //let birthday = new Date(_birthday);
-            return Math.floor((Date.now() - _birthday)/(365*24*3600000));
+            return (new Date()).getFullYear() - _birthday.getFullYear();
         },
         introduceSelf: function () {
-            console.log(`Hi! I'm ${this.name} ${Math.floor((Date.now() - this._birthday)/(365*24*3600000))}.`);
+            console.log(`Hi! I'm ${this.name} ${(new Date()).getFullYear() - this._birthday.getFullYear()}`);
         }
     };
 }
@@ -29,6 +29,8 @@ console.log(`${smith.name} is ${smith.age()} years old`);
 smith.name = 'David';
 console.log(`${smith.name} is ${smith.age()} years old`);
 console.log(smith.introduceSelf());
-smith._birthday = Date.parse('2022/01/01');
+
+smith._birthday = new Date('2022/01/01');
 console.log(`${smith.name} is ${smith.age()} years old`);
+console.log(smith.introduceSelf());
 
