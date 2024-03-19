@@ -1,24 +1,28 @@
-const Person = {
-    age: function(){ //cannot be arrow function
-        //let birthday = new Date(_birthday);
-        return (new Date()).getFullYear() - this.birthday.getFullYear();
-    },
-    bio: function(){
-        console.log(`${this.name[0]} ${this.name[1]} is ${this.age()} years old.`);
-    },
-    introduceSelf() {
-        console.log(`Hi! I'm ${this.name[0]}.`);
-    }
+const mammal = {
+  sleep() {
+    console.log(`${this.name} is sleeping ~~~~~~~`);
+  },
 };
+console.log(mammal.toString());
 
-function Student(name, birthday) {
-    this.name = name;
-    this.birthday = new Date(birthday);
-};
-//we only prototype to reuse function
-Object.assign(Student.prototype , Person);
+function Person(name, breed='human') {
+  this.name = name;
+  this.breed = breed;
+  this.talk = ()=>{console.log(`hello, I am a ${this.breed}, my name is ${this.name}!`);}
+}
+let david = new Person('david');
+//david.greet();
 
-let smith = new Student(['Bob','Smith'], '2000/01/01');
-console.log(`${smith.name} is ${smith.age()} years old`);
-let david = new Student(['Max','David'], '2004/01/01');
-console.log(`${david.name} is ${david.age()} years old`);
+Object.assign(Person.prototype, mammal);
+// or
+// Person.prototype.greet = personPrototype.greet;
+let smith = new Person('smith');
+smith.talk();
+
+function Animal(name, breed){
+  this.name = name;
+  this.breed = breed;
+}
+Object.assign(Animal.prototype, mammal);
+let dogs = new Animal('bull','dog');
+dogs.sleep();

@@ -27,11 +27,11 @@ function createPerson(name, birthday) {
 
 let smith = createPerson('smith', '2000/01/01');
 console.log(`${smith.name} is ${smith.age()} years old`);
-smith.name = 'David';
+//smith.name = 'David';
 //console.log(`${smith.name} is ${smith.age()} years old`);
-smith.introduceSelf();
+//smith.introduceSelf();
 
-smith._birthday = new Date('2022/01/01');
-console.log(`${smith.name} is ${smith.age()} years old`);
-smith.introduceSelf();
+//smith._birthday = new Date('2022/01/01');
+//console.log(`${smith.name} is ${smith.age()} years old`);
+//smith.introduceSelf();
 
