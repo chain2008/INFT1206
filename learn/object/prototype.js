@@ -17,12 +17,15 @@ Object.assign(Person.prototype, mammal);
 // or
 // Person.prototype.greet = personPrototype.greet;
 let smith = new Person('smith');
+smith.sleep();
 smith.talk();
+
 
 function Animal(name, breed){
   this.name = name;
   this.breed = breed;
 }
 Object.assign(Animal.prototype, mammal);
+
 let dogs = new Animal('bull','dog');
 dogs.sleep();
