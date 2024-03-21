@@ -1,0 +1,28 @@
+<html lang="en">
+  <body>
+    <!-- https://stackoverflow.com/questions/40579636/why-is-canvas-arc-not-circular -->
+    <canvas id="canvas" width=500px height=500px></canvas>
+  </body>
+  <script>
+function draw() {
+//https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes    
+  const canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    const ctx = canvas.getContext("2d");
+
+    ctx.beginPath();
+    //ctx.moveTo(75, 50);
+    //ctx.lineTo(100, 75);
+    //ctx.lineTo(100, 25);
+    //ctx.fill();
+    //ctx.beginPath();
+
+    ctx.arc(150,150,40,0,2*Math.PI);
+    ctx.stroke();
+    //ctx.fill();
+  }
+}
+
+draw();    
+  </script>
+</html>
