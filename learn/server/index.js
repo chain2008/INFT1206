@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 var cors = require('cors')
 const app = express();
 
+// Parse JSON bodies and URL-encoded bodies
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 const port = 9876;
 
@@ -27,7 +29,7 @@ const getGameInfo = (userId) => {
 
 app.use(cors());
 
-app.use((_req, res, next) => {
+app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   next();
 });
@@ -36,8 +38,8 @@ app.get("/init", (_, res) => {
   return res.json(getGameInfo());
 });
 
-app.post("/inft", (_req, res) => {
-  return res.send("hello");
+app.post("/inft", (req, res) => {
+  return res.send(`hello ${req.body.user_name}`);
 })
 
 app.listen(port, () => {
