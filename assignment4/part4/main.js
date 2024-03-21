@@ -113,6 +113,12 @@ class EvilCircle extends Shape {
                     break;
             }
         });
+        window.onmousedown = (e) => {
+            if(e.button === 0){
+                this.x = e.clientX;
+                this.y = e.clientY;
+            }
+        }
     }
 
     draw() {
