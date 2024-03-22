@@ -35,7 +35,7 @@ body {
   left: 2px;
 }
 
-.thumb-bar ul li img {
+.thumb-bar ul li input {
   cursor: pointer;
   width: 100%;
 }

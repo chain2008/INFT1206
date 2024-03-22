@@ -13,13 +13,12 @@ const images = [
   {file:'pic4.jpg', alt:'Hieroglyphics of pharaoh'},
   {file:'pic5.jpg', alt:'Moth on a leaf'}]
 
-
 /* Looping through images */
 
 for (const image of images) {
     const newItem = document.createElement('li');
-    const newImage = document.createElement('img');
-    newImage.setAttribute('tabIndex', `0`);
+    const newImage = document.createElement('input');
+    newImage.setAttribute('type', 'image');
     newImage.setAttribute('src', `images/${image.file}`);
     newImage.setAttribute('alt', `images/${image.alt}`);
     newItem.appendChild(newImage);
@@ -27,13 +26,7 @@ for (const image of images) {
     newImage.addEventListener('click', e => {
         displayedImage.src = e.target.src;
         displayedImage.alt =e.target.alt;
-    });
-    newImage.onkeydown = e => {
-      if(e.key === 'Enter' || e.key === ' '){
-        displayedImage.src = e.target.src;
-        displayedImage.alt =e.target.alt;
-      }
-  };    
+    }); 
 }
 
 /* Wiring up the Darken/Lighten button */
