@@ -14,16 +14,13 @@ function result() {
   let place = randomValueFromArray(places);
   let action = randomValueFromArray(actions);
   let client,weight,temperature;
-
   if (customName.value !== '') {
     client = customName.value;
   }
-
   if (document.getElementById("uk").checked) {
     weight = `${Math.round(300 / 14)} Stone`;
     temperature = `${Math.round((94 - 32) * 5 / 9)} centigrade`;
   }
-  window.eval("console.log('eval....');");
   story.textContent = getStory(role, place, action, temperature, client, weight);
   story.style.visibility = 'visible';
 }

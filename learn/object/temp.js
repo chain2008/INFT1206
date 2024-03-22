@@ -1,27 +1,27 @@
-const person = {
-    name: {
-      first: "Bob",
-      last: "Smith"
-    },
-    age: 32,
-    bio: function () {
-      console.log(`${this.name.first} ${this.name.last} is ${this.age} years old.`);
-    },
-    introduceSelf: function () {
-      console.log(`Hi! I'm ${this.name.first}.`);
-    },
-  };
+const mammal = {
+  sleep() {
+    console.log(`${this.name} is sleeping ~~~~~~~`);
+  },
+};
 
-let clientPersonText = JSON.stringify(person);
-console.log(`person is ${clientPersonText}`);
-//Http Request send  clientPersonText to server .....
-let servPerson = JSON.parse(clientPersonText);
-console.log(`${servPerson.name.first} is ${servPerson.age} years old`);
-  //console.log(person.toString2());
+function Person(name, breed='human') {
+  this.name = name;
+  this.breed = breed;
+  this.talk = ()=>{console.log(`hello, I am a ${this.breed}, my name is ${this.name}!`);}
+}
 
+Object.assign(Person.prototype, mammal);
 
-//person.name[0] = 'david';
-//person.bio();
-// "Bob Smith is 32 years old."
-//person.introduceSelf();
-// "Hi! I'm Bob."
+let smith = new Person('smith');
+let david = new Person('david');
+smith.sleep();
+smith.talk();
+
+function Animal(name, breed){
+  this.name = name;
+  this.breed = breed;
+}
+Object.assign(Animal.prototype, mammal);
+
+let dogs = new Animal('bull','dog');
+dogs.sleep();
