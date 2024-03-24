@@ -1,31 +1,27 @@
-const mammal = {
+const Animal = {
   sleep() {
-    console.log(`${this.name} is sleeping ~~~~~~~`);
+    console.log(`${this.breed} is sleeping ~~~~~~~`);
   },
+  //age() {return (new Date()).getFullYear() - new Date(birthday).getFullYear();}
 };
-console.log(mammal.toString());
 
-function Person(name, breed='human') {
+function Person(name, birthday, breed='human') {
   this.name = name;
   this.breed = breed;
-  this.talk = ()=>{console.log(`hello, I am a ${this.breed}, my name is ${this.name}!`);}
+  this.talk = ()=>{console.log(`hello, I am a ${this.breed}, my name is ${this.name}, I am ${this.age()} years old!`);}
+  this.age = () => {return (new Date()).getFullYear() - new Date(birthday).getFullYear();}
 }
-let david = new Person('david');
-//david.greet();
 
-Object.assign(Person.prototype, mammal);
-// or
-// Person.prototype.greet = personPrototype.greet;
-let smith = new Person('smith');
+Object.assign(Person.prototype, Animal);
+
+let smith = new Person('smith','01/01/2000');
 smith.sleep();
 smith.talk();
 
-
-function Animal(name, breed){
-  this.name = name;
+function Mammal(breed){
   this.breed = breed;
 }
-Object.assign(Animal.prototype, mammal);
+Object.assign(Mammal.prototype, Animal);
 
-let dogs = new Animal('bull','dog');
+let dogs = new Mammal('dog');
 dogs.sleep();

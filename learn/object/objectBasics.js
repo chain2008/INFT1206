@@ -13,5 +13,5 @@ console.log(`${person.name} is ${person.age} years old.`);
 let attributes = ['name','age'];
 person.age ++;
 console.log(`${person[attributes[0]]} is ${person[attributes[1]]} years old.`);
-//person.bio();
+person.bio();
 
