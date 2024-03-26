@@ -31,7 +31,7 @@ p, input, li, table, label {
 font[size="7"] {
   font-size: 4rem;
   text-align: center;
-  color: white;
+  color: blue;
   text-shadow: 2px 2px 10px black;
 }
 
@@ -50,10 +50,38 @@ p, li, table {
 }
 
 /* || header layout */
-
-div[class="nav"], article, footer, .secondary {
-  background-color: green;
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.header{
+  height: 100px;
+}
+
+nav, article, footer, .secondary {
+  background-color: lightcyan;
+}
+
+/*nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+nav ul {
+  width: calc(100% - 350px);
+  margin: 0px 20px 0px 20px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding-inline-start: 0px;
+}
+nav form input[type="search"]{
+  width: 250px;
+}*/
 
 article, footer, .secondary {
   padding: 10px 30px;
@@ -63,7 +91,7 @@ article {
   margin-right: 10px;
 }
 
-div[class="nav"] {
+nav {
   height: 50px;
   background-color: ff80ff;
   display: flex;
@@ -71,20 +99,20 @@ div[class="nav"] {
   margin-bottom: 10px;
 }
 
-div[class="nav"] ul {
+nav ul {
   padding: 0;
   list-style-type: none;
   flex: 2;
   display: flex;
 }
 
-div[class="nav"] li {
+nav li {
   display: inline;
   text-align: center;
   flex: 1;
 }
 
-div[class="nav"] a {
+nav a {
   display: inline-block;
   font-size: 2rem;
   text-transform: uppercase;
@@ -92,7 +120,7 @@ div[class="nav"] a {
   color: black;
 }
 
-div[class="nav"] .search {
+nav .search {
   flex: 1;
   display: flex;
   align-items: center;
