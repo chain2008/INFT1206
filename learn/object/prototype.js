@@ -7,6 +7,7 @@ const Animal = {
 };
 
 function Person(name, birthday, breed='human') {
+  Person.prototype.birthday = '01/01/1990';
   this.birthday = birthday;
   this.name = name;
   this.breed = breed;
