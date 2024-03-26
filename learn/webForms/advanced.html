@@ -8,51 +8,40 @@
   </head>
   <body>
     <form action="http://localhost:9876/inft" method="post">
-      <ul>
-        <li>
-          <label for="select">Select a fruit</label>
-          <div class="select-wrapper">
-            <select id="select" name="select">
-              <option>Banana</option>
-              <option>Cherry</option>
-              <option>Lemon</option>
-            </select>
-          </div>
-        </li>
-        <li>
-          <fieldset>
-            <legend>Fruit preferences</legend>
-        
-            <p>
-              <label>
-                <input type="checkbox" name="fruit" value="cherry" />
-                I like cherry
-              </label>
-            </p>
-            <p>
-              <label>
-                <input type="checkbox" name="fruit" value="banana" disabled />
-                I can't like banana
-              </label>
-            </p>
-            <p>
-              <label>
-                <input type="checkbox" name="fruit" value="strawberry" />
-                I like strawberry
-              </label>
-            </p>
-          </fieldset>   
-        </li>
-        <li>
-        </li>
-        <li>
-        </li>
-        <li class="button">
-        </li>        
-      </ul>
+      <label for="select">Select a fruit</label>
+      <div class="select-wrapper">
+        <select id="select" name="select">
+          <option>Banana</option>
+          <option>Cherry</option>
+          <option>Lemon</option>
+        </select>
+      </div>
 
-      <section class="sample">
+      <fieldset>
+        <legend>Fruit preferences</legend>
         <ul>
+          <li>
+            <label>
+              <input type="checkbox" name="fruit" value="cherry" />
+              I like cherry
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="fruit" value="banana" disabled />
+              I can't like banana
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" name="fruit" value="strawberry" />
+              I like strawberry
+            </label>
+          </li>
+        </ul>
+      </fieldset>         
+
+      <ul>
         <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types#email_address_field">Email address field</a><input type="email" id="email_1" name="email" multiple="multiple">
         </li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types#search_field">Search field</a>&nbsp;&nbsp;<input type="search" id="search" name="search"></li>
@@ -62,8 +51,7 @@
         <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types#slider_controls">Slider controls</a>&nbsp;&nbsp;<label for="price">Choose a maximum house price: </label> <input type="range" name="price" id="price" min="50000" max="500000" step="100" value="250000"> <output class="price-output" for="price"></output></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types#date_and_time_pickers">Date and time pickers</a>&nbsp;&nbsp;<input type="datetime-local" name="datetime" id="datetime"></li>
         <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Forms/HTML5_input_types#color_picker_control">Color picker control</a>&nbsp;&nbsp;<input type="color" name="color" id="color"></li>
-        </ul>
-        </section>       
+        </ul>  
     </form>    
   </body>
 </html>

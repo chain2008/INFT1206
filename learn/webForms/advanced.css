@@ -4,6 +4,7 @@ body {
 }
 
 form {
+  padding: 20px;
   width: 60%;
 }
 form > div {
@@ -68,4 +69,13 @@ section.sample{
 
 ul{
   list-style-type: none;
+  padding-inline-start: 0%;
+}
+ul li label{
+  display: flex;
+  line-height: 30px;
+}
+ul li label input{
+  width: 20px;
+  margin-right: 10px;
 }
