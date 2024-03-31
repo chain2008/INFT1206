@@ -99,7 +99,7 @@ nav {
   margin-bottom: 10px;
 }
 
-nav ul {
+nav menu {
   padding: 0;
   list-style-type: none;
   flex: 2;
@@ -275,4 +275,15 @@ audio {
 
 .comment-container li p:nth-child(2) {
   flex: 5;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
 }

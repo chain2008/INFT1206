@@ -5,7 +5,8 @@ var cors = require('cors')
 const app = express();
 
 // Parse JSON bodies and URL-encoded bodies
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 const port = 9876;
 
@@ -39,7 +40,7 @@ app.get("/init", (_, res) => {
 });
 
 app.post("/inft", (req, res) => {
-  return res.send(`hello ${req.body.user_name}`);
+  return res.send(`${req.body.user_name} send ${req.body.user_file}`);
 })
 
 app.listen(port, () => {

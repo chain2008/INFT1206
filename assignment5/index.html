@@ -13,7 +13,7 @@ Description:
   <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet"
     type="text/css">
   <link rel="stylesheet" href="style.css">
-
+  <script src="main.js" defer></script>
   <!-- the below three lines are a fix to get HTML5 semantic elements working in old versions of Internet Explorer-->
   <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -26,14 +26,16 @@ Description:
   </div>
 
   <nav>
-    <ul>
+    <menu>
       <li><a href="#">Home</a></li>
       <li><a href="#">Our team</a></li>
       <li><a href="#">Projects</a></li>
       <li><a href="#">Blog</a></li>
-    </ul>
-
+    </menu>
     <form class="search">
+      <label class="sr-only">
+        Search Input:
+      </label>
       <input type="search" name="q" placeholder="Search query">
       <input type="submit" value="Go!">
     </form>
@@ -194,8 +196,6 @@ Description:
   <footer>
     <p>©Copyright 2050 by nobody. All rights reversed.</p>
   </footer>
-
-  <script src="main.js"></script>
 
 </body>
 
