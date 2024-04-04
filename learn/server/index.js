@@ -36,6 +36,12 @@ app.get("/init", (_, res) => {
   return res.json({reply: 'hellp'});
 });
 
+app.post("/payment", (req, res) => {
+  // Access the uploaded file data using req.file
+  // Access other form fields using req.body  
+return res.send(`${req.body.username}'s payment info ${req.body.cardnumber}`);
+})
+
 app.post("/inft", upload.single('user_file'), (req, res) => {
     // Access the uploaded file data using req.file
     // Access other form fields using req.body  
