@@ -9,7 +9,7 @@ function randomValueFromArray(array) {
 
 randomize.addEventListener('click', result);
 
-function result() {
+function result(evt) {
   let role = randomValueFromArray(roles);
   let place = randomValueFromArray(places);
   let action = randomValueFromArray(actions);
